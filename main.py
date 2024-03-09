@@ -28,7 +28,7 @@ st.markdown(
         f"""
             <style>
                 [data-testid="stSidebar"] {{
-                    background-image: url("https://raw.githubusercontent.com/Arjun-SC31/equityengine/main/ECE_UW_hori_purp_new.jpg");
+                    background-image: url("https://raw.githubusercontent.com/thekshita/custom-chatbot/ui-edit/ECE_UW_logo.jpg");
                     background-repeat: no-repeat;
                     padding-top: 80px;
                     background-position: 20px 20px;
