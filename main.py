@@ -7,14 +7,9 @@ Created on Fri Feb  9 11:08:29 2024
 """
 
 import streamlit as st
-from dotenv import load_dotenv
 import shelve
 from query_service import QueryService
-import numpy as np
 import logging
-
-logging.basicConfig(filename='debug.log')
-logging.debug('This message should go to the log file')
 
 st.title("EquityEngine")
 
