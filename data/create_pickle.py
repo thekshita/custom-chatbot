@@ -12,23 +12,14 @@ Created on Thu Feb  8 00:08:55 2024
 import pickle
 from langchain.vectorstores import FAISS
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.document_loaders import UnstructuredURLLoader
-from langchain_community.document_loaders import DirectoryLoader
-from langchain_community.document_loaders import SeleniumURLLoader
 from langchain.text_splitter import CharacterTextSplitter
-from llama_index import download_loader
 from langchain_community.document_loaders import AsyncChromiumLoader
 from langchain_community.document_transformers import Html2TextTransformer
-
-import os
 import streamlit as st
-
-import bs4
 
 
 def create_pkl(category: str, urls: list):
     loaders = AsyncChromiumLoader(urls)
-    #loaders = UnstructuredURLLoader(urls=urls)
     data = loaders.load()
     html2text = Html2TextTransformer()
     docs_transformed = html2text.transform_documents(data)
@@ -40,7 +31,7 @@ def create_pkl(category: str, urls: list):
 
     docs = text_splitter.split_documents(docs_transformed)
 
-    embeddings = OpenAIEmbeddings(api_key=st.secrets['OPENAI_API_KEY'])
+    embeddings = OpenAIEmbeddings()#api_key=st.secrets['OPENAI_API_KEY'])
     vectorStore_openAI = FAISS.from_documents(docs, embeddings)
     
     with open(f"{category}_vectors.pkl", "wb") as f:

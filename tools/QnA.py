@@ -1,5 +1,5 @@
 from langchain.chains import RetrievalQAWithSourcesChain
-from langchain.chat_models import ChatOpenAI, openai
+from langchain.chat_models import ChatOpenAI
 import pickle
 
 def create_vector_db_tool(option: str, llm: ChatOpenAI):
