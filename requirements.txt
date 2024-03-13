@@ -12,7 +12,5 @@ faiss-cpu==1.7.2
 six==1.12.0
 typing-extensions==4.5.0
 urllib3<2
-unstructured[pdf]
 langchain_community
-selenium
 tiktoken
